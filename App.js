@@ -1,20 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, TouchableOpacity, SafeAreaView } from 'react-native';
 
 export default function App() {
+
+  let makeSound = () => {
+    console.log('hello')
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView className='flex h-full justify-center items-center bg-neutral-800 gap-12'>
+      <Text className='text-white text-3xl'>GuitariTone</Text>
+      <TouchableOpacity onPress={makeSound} className='bg-neutral-400 rounded-md p-2'><Text className='text-white'>Make Noise!</Text></TouchableOpacity>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
